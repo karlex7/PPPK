@@ -1,0 +1,21 @@
+
+
+SP za vozila znaci storane procedure za vozila
+Putni nalog napraviti ko unos, preko transakcije
+Java validacija, dohvaiti podatke nakon unosa pa provjeriti sa csv
+
+Za MVC koristiti procedure i jedan driektan SQL(za select ili neke)
+
+
+Crud --- vozila 
+     --- vozaca
+     --- putni nalog
+
+
+-Filtriranje putnih naloga ----------------------DONE
+-Putni nalog unos napraviti ko transakciju-------DONE
+-Java import-------------------------------------DONE
+-Hvatanje iznimka koristenjem infoMessage
+
+-Rijesiti delete vozila i vozaca
+

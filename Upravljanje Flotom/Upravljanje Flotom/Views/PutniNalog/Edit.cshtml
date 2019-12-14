@@ -1,0 +1,109 @@
+﻿@model Upravljanje_Flotom.Models.PutniNalog
+@using Upravljanje_Flotom.Models;
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var vozaci = ViewBag.vozac as List<Vozac>;
+    var vozila = ViewBag.vozila as List<Vozilo>;
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>PutniNalog</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group hide">
+                @Html.LabelFor(model => model.IDPutniNalog, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.IDPutniNalog, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.IDPutniNalog, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.VozacID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.VozacID, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.DropDownListFor(model => model.VozacID, selectList: new SelectList(items: vozaci, dataTextField: "Ime", dataValueField: "IDVozac"), htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.VozacID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.VoziloID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.VoziloID, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.DropDownListFor(model => model.VoziloID, selectList: new SelectList(items: vozila, dataTextField: "IDVozilo", dataValueField: "IDVozilo"), htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.VoziloID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.VrijemePocetka, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.VrijemePocetka, new { htmlAttributes = new { @class = "datepicker1 form-control" } })
+                @Html.ValidationMessageFor(model => model.VrijemePocetka, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.VrijemeZavrsetka, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.VrijemeZavrsetka, new { htmlAttributes = new { @class = "datepicker2 form-control" } })
+                @Html.ValidationMessageFor(model => model.VrijemeZavrsetka, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OstaliDetalji, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OstaliDetalji, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OstaliDetalji, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "AllPutniNalog")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+
+    <script>
+        $("#hide").hide();
+        $(".ValidationDate2").hide();
+        $(function () {
+            $(".datepicker1").datepicker();
+            $(".datepicker2").datepicker();
+
+        });
+
+        $(".datepicker2").on('change', function () {
+            var date1 = $(".datepicker1").val();
+            var date2 = $(".datepicker2").val();
+            if (date1 > date2) {
+                $(".ValidationDate2").show();
+            } else {
+                $(".ValidationDate2").hide();
+            }
+        })
+    </script>
+}

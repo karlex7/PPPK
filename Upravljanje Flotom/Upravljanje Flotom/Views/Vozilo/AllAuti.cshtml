@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Upravljanje_Flotom.Models.Vozilo>
+@using Upravljanje_Flotom.Models;
+
+@{
+    ViewBag.Title = "Vozila";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var tip = ViewBag.tip as List<TipVozila>;
+    var marka = ViewBag.marka as List<MarkaVozila>;
+}
+
+<h2>Vozila</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDVozilo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipVozilaID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MarkaVozilaID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GodinaProizvodnje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InicijalnoStanjeKilometara)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDVozilo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => tip[item.TipVozilaID - 1].Naziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => marka[item.MarkaVozilaID - 1].Naziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GodinaProizvodnje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InicijalnoStanjeKilometara)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.IDVozilo}) |
+                @*@Html.ActionLink("Details", "Details", new { id=item.IDVozilo}) |*@
+                @Html.ActionLink("Delete", "Delete", new { id=item.IDVozilo})
+            </td>
+        </tr>
+    }
+
+</table>

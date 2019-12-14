@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Upravljanje_Flotom.Models.PutniNalog>
+@using Upravljanje_Flotom.Models;
+
+@{
+    ViewBag.Title = "AllPutniNalog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var vozaci = ViewBag.vozac as List<Vozac>;
+}
+
+@section Scripts{
+    <script>
+        $("#ddlStatus").on('change', function () {
+            var status = $(this).val();
+            window.location.href = "@Url.Action("AllPutniNalog","PutniNalog")?status=" + status;
+        })
+    </script>
+    }
+
+<h2>Putni Nalozi</h2>
+
+<br />
+
+@Html.DropDownList("ddlStatus",EnumHelper.GetSelectList(typeof(Upravljanje_Flotom.Models.Status)),"Odaberi status",htmlAttributes : new { @class = "form-control" })
+
+<br />
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDPutniNalog)
+        </th>
+        <th>
+            @Html.Label("Vozac")
+        </th>
+        <th>
+            @Html.Label("Vozilo")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VrijemePocetka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VrijemeZavrsetka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OstaliDetalji)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stanje)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.IDPutniNalog)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => vozaci[item.VozacID - 1].Ime)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.VoziloID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.VrijemePocetka)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.VrijemeZavrsetka)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OstaliDetalji)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Stanje)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.IDPutniNalog }) |
+        @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+        @Html.ActionLink("Delete", "Delete", new { id = item.IDPutniNalog })
+    </td>
+</tr>
+    }
+
+</table>

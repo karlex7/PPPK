@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+    <div class="jumbotron">
+        <h1>Upravljanje flotom</h1>
+        <p style="font-size:15px;">Kreirajte funkcionalnu aplikaciju za upravljanje flotom vozila. Aplikacija omogućava korisniku:</p>
+        <p style="font-size:15px;">• registraciju vozača (ime, prezime, broj mobitela, broj vozačke dozvole), unos vozila (tip, marka, godina proizvodnje, inicijalno stanje kilometara)</p>
+        <p style="font-size:15px;">• kreiranje putnog naloga i dodjelu vozila vozaču, pregled putnih naloga</p>
+        <p style="font-size:15px;">o Pregled PN po vozaču, detalji PN za vozača, pregled svih PNa – otvorenih, zatvorenih, budućih, filtriranih</p>
+        <p style="font-size:15px;">o Evidenciju troškova goriva (tko, kada, gdje, koliko i po kojoj cijeni je kupio gorivo)</p>
+        <p style="font-size:15px;">• Praćenje prijeđene rute za svaki putni nalog putem GPS-a</p>
+        <p style="font-size:15px;">o Osigurati API za automatski unos informacije u aplikaciju: vrijeme, koordinata A i B, prijeđeni kilometri između A i B, prosječna brzina između A i B, potrošeno gorivo između A I B</p>
+        <p style="font-size:15px;">• Praćenje servisnih intervala i troškova servisa vozila</p>
+        <p style="font-size:15px;">o unos informacija direktnim načinom u aplikaciju, pregled</p>
+        <p style="font-size:15px;">• Izradu izvještaja:</p>
+        <p style="font-size:15px;">o Za putne naloge</p>
+        <p style="font-size:15px;">o Za servisne intervale</p>
+    </div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>I1 i I2</h2>
+        <p>Dizajnirajte model baze.</p>
+        <p>Napraviti funkcionalnu .NET aplikaciju za osnovne CRUD operacije.</p>
+        <p>Napravite Java aplikaciju za import i validaciju podataka.</p>
+        <p>Kriterij prihvatljivosti:</p>
+        <p>I1: Funkcionalna ‘glavna’ web/desktop aplikacija :</p>
+        <p>• SQL DDL:</p>
+        <p>o izvršiti SQL DDL fajl za kreiranje ciste baze</p>
+        <p>o Procedura za ubacivanje nekoliko testnih zapisa</p>
+        <p>o Procedura za čišćenje baze – koja bazu dovodi u stanje bez zapisa</p>
+        <p>• Vozači:</p>
+        <p>o Forma za jednostavni pregled vozača</p>
+        <p>o Forma za CRUD pojedinog vozača</p>
+        <p>o direktni sql za vozače</p>
+        <p>o SP za vozila</p>
+        <p>• Putni nalozi:</p>
+        <p>o Forma za pregled putnih naloga + filtriranje po tipu (budući, zatvoreni, aktivni)</p>
+        <p>o Forma za CRUD za putni nalog: odabir vozača, odabir slobodnog vozila, popunjavanje osnovnih informacija o PNu (start/stop grad, očekivani broj dana, …)</p>
+        <p>o transakcije</p>
+        <p>• Hvatanje iznimaka korištenjem InfoMessage</p>
+        <p>I2: Funkcionalna java app:</p>
+        <p>• Korak 1: import podataka o vozilima, vozačima iz CSV datoteke (bulk import)</p>
+        <p>• Korak 2: validacija uvezenih podataka (select + compare s ulazom)</p>
+        <p>• Korištenje transakcija, prepared statementa</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>
