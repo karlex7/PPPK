@@ -19,3 +19,72 @@ Crud --- vozila
 
 -Rijesiti delete vozila i vozaca
 
+-------------------------------------------------------------------------------
+
+Kriterij prihvatljivosti:
+I3: Netipizirani dataset, dataset->xml
+• Kreirati XML i demonstrirati Import/export podataka o prijeđenoj ruti iz XMLa
+• Koristiti netipizirani dataset
+
+internal void exportRouteSegmentsToXML(int id)
+        {
+            SqlConnection con = new SqlConnection(cs);
+            DataSet ds = new DataSet("RouteSegments");
+            SqlDataAdapter da = new SqlDataAdapter($"SELECT * FROM RouteSegment WHERE TravelOrderID = {id}", con);
+            da.Fill(ds);
+            ds.Tables[0].TableName = "RouteSegment";
+            string path = $"{XML_EXPORT_BASE}{id}.xml";
+            ds.WriteXml(path, XmlWriteMode.WriteSchema);
+            con.Close();
+        }
+
+
+
+
+I4: DAAB
+• Demonstrirati API za upis informacija o prijeđenoj ruti za zadani putni nalog:
+o zadanu listu redaka s potrebnim informacijama sprema u bazu
+o dohvaća listu informacija o prijeđenoj ruti
+o Brise/ažurira informacije o prijeđenoj ruti
+
+-promijeniti metode da rede preko DAAB
+
+
+I5: Backup/restore podataka iz aplikacije koristeći XmlReader/XmlWriter
+Kriterij prihvatljivosti:
+• Demonstrirati formu za backup/restore svih podataka iz baze u XML formatu
+o Backup: kreira jednu XML datoteku sa svim podacima
+o Počistiti bazu
+o Restore: odabirom XMLa baza se vraća u stanje opisano u XMLu
+• za pristup podacima koristiti bilo koji dosad naučeni .NET mehanizam
+• Demonstrirati formu za pregled CRUD operacije nad rutom za odabrani putni nalog
+• Prikaz + filter naloga -> odabir naloga -> prikaz informacija o ruti + CRUD za pojedini
+zapis o ruti
+
+-jednu dvije tablice backup i procitati
+
+
+I6: Napraviti Java aplikaciju koja korištenjem ORM biblioteke izrađuje izvještaje u PDF
+formatu.
+Kriterij prihvatljivosti:
+• Demonstrirati java tool koji upravlja informacijama o putnom nalogu te izrađuje PDF
+izvještaj za putni nalog
+o korisnik može ispisati sve putne naloge
+o Korisnik može dodavati račune opisane u XML datoteci
+o Korisnik može za odabrani putni nalog generirati PDF datoteku
+o U kodu koristiti hibernate + java PDF lib po izboru (npr apache pdfbox)
+
+-jpa i hibernate i napraviti pdf
+
+I7: U .NET aplikaciji realizirajte modul za prikaz izvještaja u HTML formatu - koristite ORM
+biblioteku za obradu podataka.
+Kriterij prihvatljivosti:
+• Demonstrirati formu za CRUD informacijama o servisu vozila
+o prikaz svih vozila, odabir vozila -> lista servisa -> CRUD pojedinog servisa
+o CRUD pojedine stavke servisa (npr izmjena guma, izmjena remena, …)
+• Demonstrirati formu za prikaz HTML izvještaja za pojedino vozilo:
+o Odabir jednog vozila -> generira HTML izvještaj sa prikazom informacija o
+trenutno prijeđenim kilometrima za vozilo, prosječnu brzinu te listu
+obavljenih servisa sa stavkama pojedinog servisa
+
+-Entity preko njega napraviti crud i onda prikazati html
