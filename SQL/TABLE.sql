@@ -43,3 +43,11 @@ KolicinaGoriva float,
 CijenaGoriva float,
 VrijemePlacanja date
 )
+
+create table Servis(
+IDServis int primary key identity,
+Naziv nvarchar(30),
+Detalji nvarchar(300),
+Cijena float,
+VoziloID int foreign key references Vozilo(IDVozilo)
+)

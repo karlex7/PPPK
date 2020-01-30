@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<vozaci>
+  <vozac ID="1">
+    <ime>Lovro</ime>
+    <prezime>Lovric</prezime>
+    <brojMobitela>098273813</brojMobitela>
+    <brojVozacke>142324167554</brojVozacke>
+  </vozac>
+  <vozac ID="2">
+    <ime>Ivan</ime>
+    <prezime>Ivanovic</prezime>
+    <brojMobitela>092762343</brojMobitela>
+    <brojVozacke>345346234234</brojVozacke>
+  </vozac>
+  <vozac ID="3">
+    <ime>Marko</ime>
+    <prezime>Markovic</prezime>
+    <brojMobitela>091324234</brojMobitela>
+    <brojVozacke>324254232342</brojVozacke>
+  </vozac>
+  <vozac ID="4">
+    <ime>Petar</ime>
+    <prezime>Peric</prezime>
+    <brojMobitela>0983214324</brojMobitela>
+    <brojVozacke>2342343242345</brojVozacke>
+  </vozac>
+  <vozac ID="5">
+    <ime>Josip</ime>
+    <prezime>Josipovic</prezime>
+    <brojMobitela>095214423</brojMobitela>
+    <brojVozacke>456456456456</brojVozacke>
+  </vozac>
+  <vozac ID="6">
+    <ime>Ana</ime>
+    <prezime>Anic</prezime>
+    <brojMobitela>0912142342</brojMobitela>
+    <brojVozacke>456456456456</brojVozacke>
+  </vozac>
+  <vozac ID="7">
+    <ime>Karlo</ime>
+    <prezime>Karlovic</prezime>
+    <brojMobitela>098124234</brojMobitela>
+    <brojVozacke>3453454353543</brojVozacke>
+  </vozac>
+  <vozac ID="8">
+    <ime>Mladen</ime>
+    <prezime>Horvat</prezime>
+    <brojMobitela>0912343242</brojMobitela>
+    <brojVozacke>4564564564564</brojVozacke>
+  </vozac>
+  <vozac ID="9">
+    <ime>Ivan</ime>
+    <prezime>Horvat</prezime>
+    <brojMobitela>0982413234</brojMobitela>
+    <brojVozacke>45646545646456</brojVozacke>
+  </vozac>
+  <vozac ID="10">
+    <ime>Blaz</ime>
+    <prezime>Blazevic</prezime>
+    <brojMobitela>0912345324</brojMobitela>
+    <brojVozacke>8709788797977</brojVozacke>
+  </vozac>
+</vozaci>

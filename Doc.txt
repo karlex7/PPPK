@@ -67,6 +67,9 @@ zapis o ruti
 -jednu dvije tablice backup i procitati
 
 
+-----------------------------------Promijeniti za putne naloge ak budem stigel D O N E
+
+
 I6: Napraviti Java aplikaciju koja korištenjem ORM biblioteke izrađuje izvještaje u PDF
 formatu.
 Kriterij prihvatljivosti:

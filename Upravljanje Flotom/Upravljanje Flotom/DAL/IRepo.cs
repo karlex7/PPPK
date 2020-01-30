@@ -24,6 +24,7 @@ namespace Upravljanje_Flotom.DAL
         void updateVozac(Vozac v);
         void deleteVozac(int idVozac);
         Vozac getVozac(int id);
+        void deleteALLVozac();
 
         //Putni nalog
         List<PutniNalog> getAllPutniNalog();

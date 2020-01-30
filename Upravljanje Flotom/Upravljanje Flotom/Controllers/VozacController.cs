@@ -12,9 +12,11 @@ namespace Upravljanje_Flotom.Controllers
     {
         // GET: Vozac
         IRepo repo = RepoFactory.GetRepo();
+        DisconnectedRepo dRepo = new DisconnectedRepo();
         public ActionResult AllVozaci()
         {
-            return View(repo.getAllVozaci());
+            //return View(repo.getAllVozaci());
+            return View(dRepo.getVozacsXml());
         }
         [HttpGet]
         public ActionResult Create()
@@ -44,5 +46,12 @@ namespace Upravljanje_Flotom.Controllers
             repo.deleteVozac(id);
             return RedirectToAction("AllVozaci");
         }
+        public ActionResult saveXML()
+        {
+            dRepo.writeVozacsXml();
+            return RedirectToAction("AllVozaci");
+        }
+
+        
     }
 }

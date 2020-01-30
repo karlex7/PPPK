@@ -53,6 +53,11 @@ select*from Vozac
 where IDVozac=@ID
 go
 
+create proc DELETE_ALL_VOZAC
+as
+delete from Vozac
+go
+
 
 -----------------------------
 -------PUTNI-NALOG-----------
@@ -162,3 +167,11 @@ select* from Vozilo
 where IDVozilo=@ID
 go
 
+create proc GET_ALL_MARKE
+as
+select*from MarkaVozila
+go
+
+-----------------------------
+---------SERVIS--------------
+-----------------------------

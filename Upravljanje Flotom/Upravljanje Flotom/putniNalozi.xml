@@ -1,0 +1,119 @@
+<?xml version="1.0" standalone="yes"?>
+<PutniNalog>
+  <xs:schema id="PutniNalog" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="PutniNalog" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="PutniNalogs">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="IDPutniNalog" type="xs:int" minOccurs="0" />
+                <xs:element name="VozacID" type="xs:int" minOccurs="0" />
+                <xs:element name="VoziloID" type="xs:int" minOccurs="0" />
+                <xs:element name="VrijemePocetka" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="VrijemeZavrsetka" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="OstaliDetalji" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <PutniNalogs>
+    <IDPutniNalog>1</IDPutniNalog>
+    <VozacID>1</VozacID>
+    <VoziloID>3</VoziloID>
+    <VrijemePocetka>2011-09-01T00:00:00+02:00</VrijemePocetka>
+    <VrijemeZavrsetka>2011-10-01T00:00:00+02:00</VrijemeZavrsetka>
+    <OstaliDetalji>efwef</OstaliDetalji>
+  </PutniNalogs>
+  <PutniNalogs>
+    <IDPutniNalog>2</IDPutniNalog>
+    <VozacID>2</VozacID>
+    <VoziloID>2</VoziloID>
+    <VrijemePocetka>2013-03-22T00:00:00+01:00</VrijemePocetka>
+    <VrijemeZavrsetka>2013-03-26T00:00:00+01:00</VrijemeZavrsetka>
+    <OstaliDetalji>Guzva na cesti</OstaliDetalji>
+  </PutniNalogs>
+  <PutniNalogs>
+    <IDPutniNalog>4</IDPutniNalog>
+    <VozacID>4</VozacID>
+    <VoziloID>4</VoziloID>
+    <VrijemePocetka>2014-11-01T00:00:00+01:00</VrijemePocetka>
+    <VrijemeZavrsetka>2014-11-02T00:00:00+01:00</VrijemeZavrsetka>
+    <OstaliDetalji>Pokupiti stvari za put</OstaliDetalji>
+  </PutniNalogs>
+  <PutniNalogs>
+    <IDPutniNalog>5</IDPutniNalog>
+    <VozacID>5</VozacID>
+    <VoziloID>5</VoziloID>
+    <VrijemePocetka>2019-11-09T00:00:00+01:00</VrijemePocetka>
+    <VrijemeZavrsetka>1900-01-01T00:00:00+01:00</VrijemeZavrsetka>
+    <OstaliDetalji />
+  </PutniNalogs>
+  <PutniNalogs>
+    <IDPutniNalog>6</IDPutniNalog>
+    <VozacID>1</VozacID>
+    <VoziloID>1</VoziloID>
+    <VrijemePocetka>2019-11-14T00:00:00+01:00</VrijemePocetka>
+    <VrijemeZavrsetka>2019-11-16T00:00:00+01:00</VrijemeZavrsetka>
+    <OstaliDetalji>detalji</OstaliDetalji>
+  </PutniNalogs>
+  <PutniNalogs>
+    <IDPutniNalog>7</IDPutniNalog>
+    <VozacID>10</VozacID>
+    <VoziloID>10</VoziloID>
+    <VrijemePocetka>2019-11-13T00:00:00+01:00</VrijemePocetka>
+    <VrijemeZavrsetka>2019-11-16T00:00:00+01:00</VrijemeZavrsetka>
+    <OstaliDetalji>tekst</OstaliDetalji>
+  </PutniNalogs>
+  <PutniNalogs>
+    <IDPutniNalog>8</IDPutniNalog>
+    <VozacID>1</VozacID>
+    <VoziloID>1</VoziloID>
+    <VrijemePocetka>2019-12-20T00:00:00+01:00</VrijemePocetka>
+    <VrijemeZavrsetka>2019-12-28T00:00:00+01:00</VrijemeZavrsetka>
+    <OstaliDetalji>wefwef</OstaliDetalji>
+  </PutniNalogs>
+  <PutniNalogs>
+    <IDPutniNalog>9</IDPutniNalog>
+    <VozacID>1</VozacID>
+    <VoziloID>6</VoziloID>
+    <VrijemePocetka>2020-09-10T00:00:00+02:00</VrijemePocetka>
+    <VrijemeZavrsetka>2020-11-26T00:00:00+01:00</VrijemeZavrsetka>
+    <OstaliDetalji>detalji</OstaliDetalji>
+  </PutniNalogs>
+  <PutniNalogs>
+    <IDPutniNalog>10</IDPutniNalog>
+    <VozacID>1</VozacID>
+    <VoziloID>1</VoziloID>
+    <VrijemePocetka>2019-11-16T00:00:00+01:00</VrijemePocetka>
+    <VrijemeZavrsetka>2019-11-30T00:00:00+01:00</VrijemeZavrsetka>
+    <OstaliDetalji>43252afw</OstaliDetalji>
+  </PutniNalogs>
+  <PutniNalogs>
+    <IDPutniNalog>1007</IDPutniNalog>
+    <VozacID>1</VozacID>
+    <VoziloID>1</VoziloID>
+    <VrijemePocetka>2019-11-12T00:00:00+01:00</VrijemePocetka>
+    <VrijemeZavrsetka>2019-11-13T00:00:00+01:00</VrijemeZavrsetka>
+    <OstaliDetalji>fesg</OstaliDetalji>
+  </PutniNalogs>
+  <PutniNalogs>
+    <IDPutniNalog>1008</IDPutniNalog>
+    <VozacID>4</VozacID>
+    <VoziloID>6</VoziloID>
+    <VrijemePocetka>2019-11-14T00:00:00+01:00</VrijemePocetka>
+    <VrijemeZavrsetka>2019-12-20T00:00:00+01:00</VrijemeZavrsetka>
+    <OstaliDetalji>detalji</OstaliDetalji>
+  </PutniNalogs>
+  <PutniNalogs>
+    <IDPutniNalog>1009</IDPutniNalog>
+    <VozacID>1</VozacID>
+    <VoziloID>1</VoziloID>
+    <VrijemePocetka>2019-11-17T00:00:00+01:00</VrijemePocetka>
+    <VrijemeZavrsetka>2019-11-06T00:00:00+01:00</VrijemeZavrsetka>
+    <OstaliDetalji>wefwe</OstaliDetalji>
+  </PutniNalogs>
+</PutniNalog>

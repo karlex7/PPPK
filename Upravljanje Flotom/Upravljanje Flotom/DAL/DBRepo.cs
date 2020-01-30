@@ -11,6 +11,21 @@ namespace Upravljanje_Flotom.DAL
     public class DBRepo : IRepo
     {
         private static string cs = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
+
+        public void deleteALLVozac()
+        {
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                con.Open();
+                using (SqlCommand comm = con.CreateCommand())
+                {
+                    comm.CommandType = System.Data.CommandType.StoredProcedure;
+                    comm.CommandText = "DELETE_ALL_VOZAC";
+                    comm.ExecuteNonQuery();
+                }
+            }
+        }
+
         public void deletePutniNalog(int idPutniNalog)
         {
             using (SqlConnection con=new SqlConnection(cs))

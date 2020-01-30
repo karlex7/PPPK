@@ -7,6 +7,8 @@ using System.Linq;
 using System.Web;
 using Upravljanje_Flotom.Models;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Upravljanje_Flotom.DAL
 {
@@ -14,7 +16,8 @@ namespace Upravljanje_Flotom.DAL
     {
         private static string cs = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
         static SqlDatabase db = new SqlDatabase(cs);
-        private readonly string XML_PATH = System.Web.Hosting.HostingEnvironment.MapPath("~/xml.xml");
+        private readonly string XML_PATH_PUTNI_NALOG = System.Web.Hosting.HostingEnvironment.MapPath("~/putniNalozi.xml");
+        private readonly string XML_PATH_VOZACI = System.Web.Hosting.HostingEnvironment.MapPath("~/vozaci.xml");
 
         public List<MarkaVozila> getAllMarkaVozila()
         {
@@ -45,7 +48,7 @@ namespace Upravljanje_Flotom.DAL
 
             sda.Fill(ds);
             ds.Tables[0].TableName = "PutniNalogs";
-            ds.WriteXml(XML_PATH, XmlWriteMode.WriteSchema);
+            ds.WriteXml(XML_PATH_PUTNI_NALOG, XmlWriteMode.WriteSchema);
 
             con.Close();
             
@@ -56,7 +59,7 @@ namespace Upravljanje_Flotom.DAL
 
             DataSet ds = new DataSet();
 
-            ds.ReadXml(XML_PATH);
+            ds.ReadXml(XML_PATH_PUTNI_NALOG);
             foreach (DataRow row in ds.Tables[0].Rows)
             {
                 putniNalogs.Add(new PutniNalog
@@ -73,5 +76,102 @@ namespace Upravljanje_Flotom.DAL
 
             return putniNalogs;
         }
+
+        /*************X M L READER/WRITER***************/
+
+        public void writeVozacsXml()
+        {
+            XmlWriterSettings xmlPostavke = new XmlWriterSettings();
+            xmlPostavke.Indent=true;
+            XmlWriter xmlWriter = XmlWriter.Create(XML_PATH_VOZACI, xmlPostavke);
+
+            xmlWriter.WriteStartDocument();
+
+            xmlWriter.WriteStartElement("vozaci");  //Ishodisni element
+
+            foreach (Vozac vozac in RepoFactory.GetRepo().getAllVozaci())
+            {
+
+                //Vozac
+                xmlWriter.WriteStartElement("vozac");
+                xmlWriter.WriteAttributeString("ID", vozac.IDVozac.ToString());
+
+                //Ime
+                xmlWriter.WriteStartElement("ime");
+                xmlWriter.WriteString(vozac.Ime);
+                xmlWriter.WriteEndElement();
+
+                //Prezime
+                xmlWriter.WriteStartElement("prezime");
+                xmlWriter.WriteString(vozac.Prezime);
+                xmlWriter.WriteEndElement();
+
+                //Broj mobitela
+                xmlWriter.WriteStartElement("brojMobitela");
+                xmlWriter.WriteString(vozac.BrojMobitela);
+                xmlWriter.WriteEndElement();
+
+                //Broj vozacke
+                xmlWriter.WriteStartElement("brojVozacke");
+                xmlWriter.WriteString(vozac.BrojVozacke);
+                xmlWriter.WriteEndElement();
+
+                //Kraj vozaca
+                xmlWriter.WriteEndElement();
+            }
+            //Kraj ishodisnog
+            xmlWriter.WriteEndElement();
+
+            xmlWriter.Close();
+        }
+
+        public List<Vozac> getVozacsXml()
+        {
+            //Brisanje svih vozaca
+            //RepoFactory.GetRepo().deleteALLVozac();
+
+
+            List<Vozac> vozacs = new List<Vozac>();
+
+            XmlDocument xmlDOM = new XmlDocument();
+            xmlDOM.Load(XML_PATH_VOZACI);
+
+            XmlNodeList kolekcijaVozaca = xmlDOM.GetElementsByTagName("vozac");
+
+            foreach (XmlNode vozac in kolekcijaVozaca)
+            {
+                Vozac v = new Vozac();
+                v.IDVozac = int.Parse(vozac.Attributes[0].Value);
+
+                foreach (XmlNode podatak in vozac.ChildNodes)
+                {
+                    switch (podatak.Name)
+                    {
+                        case "ime":
+                            v.Ime = podatak.InnerText;
+                            break;
+                        case "prezime":
+                            v.Prezime = podatak.InnerText;
+                            break;
+                        case "brojMobitela":
+                            v.BrojMobitela = podatak.InnerText;
+                            break;
+                        case "brojVozacke":
+                            v.BrojVozacke = podatak.InnerText;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                
+                    vozacs.Add(v);
+            }
+            foreach (Vozac vozac in vozacs)
+            {
+                RepoFactory.GetRepo().insertVozac(vozac);
+            }
+            return vozacs;
+        }
+
     }
 }

@@ -16,7 +16,7 @@ namespace Upravljanje_Flotom.Controllers
         public ActionResult AllPutniNalog(int?status)
         {
             ViewBag.vozac = repo.getAllVozaci();
-            List<PutniNalog> putniNalozi = dRepo.loadPtuniNalogXML();//repo.getAllPutniNalog();//
+            List<PutniNalog> putniNalozi = repo.getAllPutniNalog();//dRepo.loadPtuniNalogXML();//repo.getAllPutniNalog();//
             foreach (PutniNalog item in putniNalozi)
             {
                 item.PostaviStanje();
