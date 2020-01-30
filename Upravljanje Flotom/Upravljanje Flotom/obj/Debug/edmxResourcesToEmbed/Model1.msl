@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PPPKFleetManagementModelStoreContainer" CdmEntityContainer="PPPKFleetManagementEntities">
+    <EntitySetMapping Name="Servis">
+      <EntityTypeMapping TypeName="PPPKFleetManagementModel.Servi">
+        <MappingFragment StoreEntitySet="Servis">
+          <ScalarProperty Name="IDServis" ColumnName="IDServis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Detalji" ColumnName="Detalji" />
+          <ScalarProperty Name="Cijena" ColumnName="Cijena" />
+          <ScalarProperty Name="VoziloID" ColumnName="VoziloID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

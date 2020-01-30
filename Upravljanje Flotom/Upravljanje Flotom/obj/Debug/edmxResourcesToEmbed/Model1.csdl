@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PPPKFleetManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Servi">
+    <Key>
+      <PropertyRef Name="IDServis" />
+    </Key>
+    <Property Name="IDServis" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Naziv" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Detalji" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Cijena" Type="Double" />
+    <Property Name="VoziloID" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="PPPKFleetManagementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Servis" EntityType="Self.Servi" />
+  </EntityContainer>
+</Schema>

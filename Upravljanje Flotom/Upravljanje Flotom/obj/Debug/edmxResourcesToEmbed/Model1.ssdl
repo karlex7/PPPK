@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PPPKFleetManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Servis">
+    <Key>
+      <PropertyRef Name="IDServis" />
+    </Key>
+    <Property Name="IDServis" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naziv" Type="nvarchar" MaxLength="30" />
+    <Property Name="Detalji" Type="nvarchar" MaxLength="300" />
+    <Property Name="Cijena" Type="float" />
+    <Property Name="VoziloID" Type="int" />
+  </EntityType>
+  <EntityContainer Name="PPPKFleetManagementModelStoreContainer">
+    <EntitySet Name="Servis" EntityType="Self.Servis" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

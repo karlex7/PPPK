@@ -152,3 +152,7 @@ C:\Users\FRIDAY\Documents\PPPK\Projekt\Upravljanje Flotom\Upravljanje Flotom\bin
 C:\Users\FRIDAY\Documents\PPPK\Projekt\Upravljanje Flotom\Upravljanje Flotom\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
 C:\Users\FRIDAY\Documents\PPPK\Projekt\Upravljanje Flotom\Upravljanje Flotom\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
 C:\Users\FRIDAY\Documents\PPPK\Projekt\Upravljanje Flotom\Upravljanje Flotom\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\FRIDAY\Documents\PPPK\Projekt\Upravljanje Flotom\Upravljanje Flotom\bin\EntityFramework.dll
+C:\Users\FRIDAY\Documents\PPPK\Projekt\Upravljanje Flotom\Upravljanje Flotom\bin\EntityFramework.SqlServer.dll
+C:\Users\FRIDAY\Documents\PPPK\Projekt\Upravljanje Flotom\Upravljanje Flotom\bin\EntityFramework.xml
+C:\Users\FRIDAY\Documents\PPPK\Projekt\Upravljanje Flotom\Upravljanje Flotom\bin\EntityFramework.SqlServer.xml
