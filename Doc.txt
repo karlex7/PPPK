@@ -39,7 +39,7 @@ internal void exportRouteSegmentsToXML(int id)
         }
 
 
-
+-----------------------------------D O N E
 
 I4: DAAB
 • Demonstrirati API za upis informacija o prijeđenoj ruti za zadani putni nalog:
@@ -48,6 +48,9 @@ o dohvaća listu informacija o prijeđenoj ruti
 o Brise/ažurira informacije o prijeđenoj ruti
 
 -promijeniti metode da rede preko DAAB
+
+-----------------------------------D O N E
+
 
 
 I5: Backup/restore podataka iz aplikacije koristeći XmlReader/XmlWriter

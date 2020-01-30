@@ -13,10 +13,11 @@ namespace Upravljanje_Flotom.Controllers
     {
         // GET: Vozilo
         IRepo repo = RepoFactory.GetRepo();
+        DisconnectedRepo dRepo = new DisconnectedRepo();
         public ActionResult AllAuti()
         {
             ViewBag.tip = repo.getAllTipVozila();
-            ViewBag.marka = repo.getAllMarkaVozila();
+            ViewBag.marka = dRepo.getAllMarkaVozila();//repo.getAllMarkaVozila();
             return View(repo.getAllVozila());
         }
         [HttpGet]
@@ -30,7 +31,8 @@ namespace Upravljanje_Flotom.Controllers
         [HttpPost]
         public ActionResult Create(Vozilo v)
         {
-            repo.insertVozilo(v);
+            //repo.insertVozilo(v);
+            dRepo.insertVozilo(v);
             return RedirectToAction("AllAuti");
         }
         [HttpGet]

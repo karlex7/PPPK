@@ -12,10 +12,11 @@ namespace Upravljanje_Flotom.Controllers
     {
         // GET: PutniNalog
         IRepo repo = RepoFactory.GetRepo();
+        DisconnectedRepo dRepo = new DisconnectedRepo();
         public ActionResult AllPutniNalog(int?status)
         {
             ViewBag.vozac = repo.getAllVozaci();
-            List<PutniNalog> putniNalozi = repo.getAllPutniNalog();
+            List<PutniNalog> putniNalozi = dRepo.loadPtuniNalogXML();//repo.getAllPutniNalog();//
             foreach (PutniNalog item in putniNalozi)
             {
                 item.PostaviStanje();
@@ -77,6 +78,12 @@ namespace Upravljanje_Flotom.Controllers
         public ActionResult Delete(int id)
         {
             repo.deletePutniNalog(id);
+            return RedirectToAction("AllPutniNalog");
+        }
+        //[HttpGet]
+        public ActionResult ExportXML()
+        {
+            dRepo.exportPutniNalogXML();
             return RedirectToAction("AllPutniNalog");
         }
     }

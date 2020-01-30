@@ -148,3 +148,7 @@ C:\Users\FRIDAY\Documents\PPPK\Projekt\Upravljanje Flotom\Upravljanje Flotom\obj
 C:\Users\FRIDAY\Documents\PPPK\Projekt\Upravljanje Flotom\Upravljanje Flotom\obj\Debug\Upravljanje Flotom.csproj.CopyComplete
 C:\Users\FRIDAY\Documents\PPPK\Projekt\Upravljanje Flotom\Upravljanje Flotom\obj\Debug\Upravljanje Flotom.dll
 C:\Users\FRIDAY\Documents\PPPK\Projekt\Upravljanje Flotom\Upravljanje Flotom\obj\Debug\Upravljanje Flotom.pdb
+C:\Users\FRIDAY\Documents\PPPK\Projekt\Upravljanje Flotom\Upravljanje Flotom\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\FRIDAY\Documents\PPPK\Projekt\Upravljanje Flotom\Upravljanje Flotom\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\FRIDAY\Documents\PPPK\Projekt\Upravljanje Flotom\Upravljanje Flotom\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\FRIDAY\Documents\PPPK\Projekt\Upravljanje Flotom\Upravljanje Flotom\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
