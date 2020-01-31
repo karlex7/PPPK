@@ -10,6 +10,9 @@
     <Property Name="Cijena" Type="float" />
     <Property Name="VoziloID" Type="int" />
   </EntityType>
+  <Function Name="GET_SERVISI_FOR_VOZILO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
   <EntityContainer Name="PPPKFleetManagementModelStoreContainer">
     <EntitySet Name="Servis" EntityType="Self.Servis" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

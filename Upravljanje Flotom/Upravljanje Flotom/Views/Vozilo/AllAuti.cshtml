@@ -52,9 +52,11 @@
                 @Html.DisplayFor(modelItem => item.InicijalnoStanjeKilometara)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.IDVozilo}) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.IDVozilo }) |
                 @*@Html.ActionLink("Details", "Details", new { id=item.IDVozilo}) |*@
-                @Html.ActionLink("Delete", "Delete", new { id=item.IDVozilo})
+                @Html.ActionLink("Delete", "Delete", new { id = item.IDVozilo }) |
+                @Html.ActionLink("Servisi", "ServisiZaAuto", "Servis", new { id = item.IDVozilo }, null) |
+                @Html.ActionLink("Generiraj Report", "GenerateReport", new { id = item.IDVozilo }, null)
             </td>
         </tr>
     }

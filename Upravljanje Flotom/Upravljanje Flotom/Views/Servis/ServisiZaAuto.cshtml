@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Upravljanje_Flotom.Servi>
+
+@{
+    ViewBag.Title = "ServisiZaAuto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ServisiZaAuto</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Detalji)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cijena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VoziloID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Detalji)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cijena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VoziloID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDServis }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDServis })
+        </td>
+    </tr>
+}
+
+</table>

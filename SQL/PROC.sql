@@ -175,3 +175,10 @@ go
 -----------------------------
 ---------SERVIS--------------
 -----------------------------
+
+create proc GET_SERVISI_FOR_VOZILO
+@ID int
+as
+select* from Servis
+where VoziloID=@ID
+go

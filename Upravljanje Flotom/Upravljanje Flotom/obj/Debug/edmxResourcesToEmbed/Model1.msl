@@ -12,5 +12,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GET_SERVISI_FOR_VOZILO" FunctionName="PPPKFleetManagementModel.Store.GET_SERVISI_FOR_VOZILO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PPPKFleetManagementModel.GET_SERVISI_FOR_VOZILO_Result">
+          <ScalarProperty Name="IDServis" ColumnName="IDServis" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Detalji" ColumnName="Detalji" />
+          <ScalarProperty Name="Cijena" ColumnName="Cijena" />
+          <ScalarProperty Name="VoziloID" ColumnName="VoziloID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

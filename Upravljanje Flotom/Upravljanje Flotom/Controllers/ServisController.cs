@@ -126,5 +126,30 @@ namespace Upravljanje_Flotom.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult ServisiZaAuto(int id)
+        {
+            //Sloziti da mi ta metoda vraca servise
+            //return View(db.GET_SERVISI_FOR_VOZILO(id));
+            List<Servi> servisi = new List<Servi>();
+            foreach (GET_SERVISI_FOR_VOZILO_Result item in db.GET_SERVISI_FOR_VOZILO(id))
+            {
+                int idServis = item.IDServis;
+                string naziv = item.Naziv;
+                string detalji = item.Detalji;
+                double cijena=double.Parse(item.Cijena.ToString());
+                int idvozilo = int.Parse(item.VoziloID.ToString());
+
+                Servi s = new Servi();
+                s.IDServis = idServis;
+                s.Naziv = naziv;
+                s.Detalji = detalji;
+                s.Cijena = cijena;
+                s.VoziloID = idvozilo;
+
+                servisi.Add(s);
+            }
+            return View(servisi);
+        }
     }
 }

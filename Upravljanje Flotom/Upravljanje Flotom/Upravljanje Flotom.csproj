@@ -143,6 +143,9 @@
     <Compile Include="DAL\DisconnectedRepo.cs" />
     <Compile Include="DAL\IRepo.cs" />
     <Compile Include="DAL\RepoFactory.cs" />
+    <Compile Include="GET_SERVISI_FOR_VOZILO_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -172,6 +175,7 @@
     <Compile Include="Servi.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Utils\VoziloReport.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -285,6 +289,7 @@
     <Content Include="Views\Servis\Create.cshtml" />
     <Content Include="Views\Servis\Edit.cshtml" />
     <Content Include="Views\Servis\Delete.cshtml" />
+    <Content Include="Views\Servis\ServisiZaAuto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

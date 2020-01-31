@@ -12,6 +12,8 @@ namespace Upravljanje_Flotom
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class PPPKFleetManagementEntities : DbContext
     {
@@ -26,5 +28,14 @@ namespace Upravljanje_Flotom
         }
     
         public virtual DbSet<Servi> Servis { get; set; }
+    
+        public virtual ObjectResult<GET_SERVISI_FOR_VOZILO_Result> GET_SERVISI_FOR_VOZILO(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GET_SERVISI_FOR_VOZILO_Result>("GET_SERVISI_FOR_VOZILO", iDParameter);
+        }
     }
 }

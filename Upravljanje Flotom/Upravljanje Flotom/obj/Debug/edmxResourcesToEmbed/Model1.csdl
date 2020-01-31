@@ -12,5 +12,15 @@
   </EntityType>
   <EntityContainer Name="PPPKFleetManagementEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Servis" EntityType="Self.Servi" />
+    <FunctionImport Name="GET_SERVISI_FOR_VOZILO" ReturnType="Collection(PPPKFleetManagementModel.GET_SERVISI_FOR_VOZILO_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="GET_SERVISI_FOR_VOZILO_Result">
+    <Property Type="Int32" Name="IDServis" Nullable="false" />
+    <Property Type="String" Name="Naziv" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Detalji" Nullable="true" MaxLength="300" />
+    <Property Type="Double" Name="Cijena" Nullable="true" />
+    <Property Type="Int32" Name="VoziloID" Nullable="true" />
+  </ComplexType>
 </Schema>

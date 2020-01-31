@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Upravljanje_Flotom.DAL;
 using Upravljanje_Flotom.Models;
+using Upravljanje_Flotom.Utils;
 
 namespace Upravljanje_Flotom.Controllers
 {
@@ -55,6 +56,14 @@ namespace Upravljanje_Flotom.Controllers
             repo.deleteVozilo(id);
             return RedirectToAction("AllAuti");
         }
+        
+        public ActionResult GenerateReport(int id)
+        {
+            VoziloReport r = new VoziloReport();
+            r.generateReport(id);
+            return RedirectToAction("AllAuti");
+        }
+
 
     }
 }

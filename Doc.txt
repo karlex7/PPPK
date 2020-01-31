@@ -94,3 +94,5 @@ trenutno prijeđenim kilometrima za vozilo, prosječnu brzinu te listu
 obavljenih servisa sa stavkama pojedinog servisa
 
 -Entity preko njega napraviti crud i onda prikazati html
+
+-----------------------------------D O N E
