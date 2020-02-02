@@ -45,6 +45,10 @@ public class PutniNalog {
     @Column(name = "OstaliDetalji")
     private String ostaliDetalji;
 
+    public PutniNalog() {
+    }
+    
+
     public PutniNalog(int id, Vozac vozac, Vozilo vozilo, Date vrijemePocetka, Date vrijemeZavrsetka, String ostaliDetalji) {
         this.id = id;
         this.vozac = vozac;
@@ -101,6 +105,13 @@ public class PutniNalog {
     public void setOstaliDetalji(String ostaliDetalji) {
         this.ostaliDetalji = ostaliDetalji;
     }
+
+    @Override
+    public String toString() {
+        return "Putni nalog ID:"+ getId() +" Marka Vozila:" + getVozilo().getMarkaVozila().getNaziv()+ " Tip vozila:" +getVozilo().getTipVozila().getNaziv()+ "Vozac:"+ getVozac().getIme()+ " Datum pocetka:"+ getVrijemePocetka()+" Datum zavrsteka:"+getVrijemeZavrsetka();
+    }
+    
+    
     
     
 }

@@ -28,10 +28,10 @@ public class MarkaVozila {
     @Column(name = "Naziv")
     private String naziv;
 
-    public MarkaVozila(String naziv) {
-        this.naziv = naziv;
+    public MarkaVozila() {
     }
-
+    
+    
     
     public MarkaVozila(int id, String naziv) {
         this.id = id;

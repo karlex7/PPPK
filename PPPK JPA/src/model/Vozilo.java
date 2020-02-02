@@ -41,6 +41,10 @@ public class Vozilo {
     @Column(name = "InicijalnoStanjeKilometara")
     private int inicijalnoStanjeKilometara;
 
+    public Vozilo() {
+    }
+    
+
     public Vozilo(TipVozila tipVozila, MarkaVozila markaVozila, int godinaProizvodnje, int inicijalnoStanjeKilometara) {
         this.tipVozila = tipVozila;
         this.markaVozila = markaVozila;

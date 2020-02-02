@@ -27,6 +27,10 @@ public class TipVozila {
     @Column(name = "Naziv")
     private String naziv;
 
+    public TipVozila() {
+    }
+    
+
     public TipVozila(int id, String naziv) {
         this.id = id;
         this.naziv = naziv;
