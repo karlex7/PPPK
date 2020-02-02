@@ -26,18 +26,6 @@ I3: Netipizirani dataset, dataset->xml
 • Kreirati XML i demonstrirati Import/export podataka o prijeđenoj ruti iz XMLa
 • Koristiti netipizirani dataset
 
-internal void exportRouteSegmentsToXML(int id)
-        {
-            SqlConnection con = new SqlConnection(cs);
-            DataSet ds = new DataSet("RouteSegments");
-            SqlDataAdapter da = new SqlDataAdapter($"SELECT * FROM RouteSegment WHERE TravelOrderID = {id}", con);
-            da.Fill(ds);
-            ds.Tables[0].TableName = "RouteSegment";
-            string path = $"{XML_EXPORT_BASE}{id}.xml";
-            ds.WriteXml(path, XmlWriteMode.WriteSchema);
-            con.Close();
-        }
-
 
 -----------------------------------D O N E
 
